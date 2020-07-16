@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Day 5</title>
+    <title>Day 8</title>
 
     <link
       rel="stylesheet"
@@ -12,40 +12,48 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <h5>Task List</h5>
-          <div class="form-group">
-            <div class="input-group mb-3">
-              <input
-                id="task"
-                class="form-control"
-                type="text"
-                placeholder="the task..."
-              />
-              <div class="input-group-append">
-                <button
-                  id="addBtn"
-                  type="button"
-                  class="btn btn-outline-secondary"
-                >
-                  Add
-                </button>
+    <div class="welcome page">
+        <h3> Welcome to the Task List Page</h3>
+      <div class="login page">
+          <P>Please sign in your email and password</P>
+        <div class="sign-in page">
+          <div class="container">
+            <div class="card">
+              <div class="card-body">
+                <h5>Task List</h5>
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <input
+                      id="task"
+                      class="form-control"
+                      type="text"
+                      placeholder="the task..."
+                    />
+                    <div class="input-group-append">
+                      <button
+                        id="addBtn"
+                        type="button"
+                        class="btn btn-outline-secondary"
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <table class="table table-sm table-bordered mt-2">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Tasks</th>
+                    <th scope="col">Edit</th>
+                  </tr>
+                </thead>
+                <tbody id="taskList"></tbody>
+              </table>
             </div>
           </div>
         </div>
-
-        <table class="table table-sm table-bordered mt-2">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Tasks</th>
-              <th scope="col">Edit</th>
-            </tr>
-          </thead>
-          <tbody id="taskList"></tbody>
-        </table>
       </div>
     </div>
 
