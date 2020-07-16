@@ -1,26 +1,32 @@
 const usernameInputElement = document.getElementById("username");
-console.log(usernameInputElement);
 
-usernameInputElement.addEventListener("keydown", async (e) => {
-  e.preventDefault();
-  console.log("Key up!", e);
+usernameInputElement.addEventListener("keyup", (e) => {
+  console.log('Key up!', e);
 
   const username = e.target.value;
-  console.log(username);
+  // console.log(username);
 
   const baseUrl = "https://api.github.com/users/" + username;
-  console.log(baseUrl);
+  // console.log(baseUrl);
 
-  try {
-    const response = await fetch(baseUrl);
-    const userData = await response.json();
-    console.log("User Location: ", userData.location);
+  fetch(baseUrl)
+    .then((response) => {
+      response.json().then((userData) => {
+        console.log("Yeeaaaahh Boooiii!!!", userData);
+        console.log("User Location: ", userData.location);
+        console.log("Number of followers: ", userData.followers);
+        document.getElementById('profile').innerText = userData.location;
+        const profileElement = document.getElementById("profile");
+        profileElement.innerHTML = `
+      <div class="badge badge-primary">${userData.location}</div>
+      <div class="thisOne">Number of followers: ${userData.followers}</div>
+      `;
+      });
+    })
+    .catch((err) => {
+      console.log("Ahh phuck... ", err);
+    });
 
-    const profileElement = document.getElementById("profile");
-    profileElement.innerHTML = `
-      <div>${userData.location}</div>
-    `;
-  } catch (err) {
-    console.log("Aww...", err);
-  }
+  // console.log('This will happen first');
+  e.preventDefault();
 });
