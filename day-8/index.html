@@ -64,6 +64,29 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script> -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAilbEhqr7V2ry2htVmFih8GEuL9KfsTiY",
+        authDomain: "ix-2020-green-miki.firebaseapp.com",
+        databaseURL: "https://ix-2020-green-miki.firebaseio.com",
+        projectId: "ix-2020-green-miki",
+        storageBucket: "ix-2020-green-miki.appspot.com",
+        messagingSenderId: "1066143413186",
+        appId: "1:1066143413186:web:a4bbe5bacecca8ad8e1c5b",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
     <script src="app.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@ usernmaneInputElement.addEventListener("keydown", async(e) =>{
     console.log("Key up!",e);
     
     const username=e.target.value;
-    const baseUrl = "https://pokeapi.co/api/v2/evolution-chain/?limit=20&offset=20";
+    const baseUrl = "https://pokeapi.co/api/v2/evolution-chain/?limit=20&offset=20" + username;
     console.log(baseUrl);
 
     try{
