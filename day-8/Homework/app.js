@@ -183,4 +183,70 @@ class Task {
     }
   
   });
+
+  signIn(email, password, target) {
+    if (target.id == "signInButtonId") {
+
+        firebase.auth().signInWithEmailAndPassword(email, password);
+        //currentUser = firebase.auth().currentUser;
+        
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                currentUser = user;
+            } else {
+                return
+            }
+            console.log(currentUser);
+
+
+            if (currentUser == null) {
+                return;
+            }
+            else {
+                document.getElementById("overall").style.display = "block";
+                document.getElementById("overall2").style.display = "block";
+                document.getElementById("welcomepage").style.display = "none";
+                console.log("made it here");
+            }
+        });
+    }
+}
+
+createAccount(email, password, target) {
+    if (target.id == "createAccountButtonId") {
+        firebase.auth().createUserWithEmailAndPassword(email, password);
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log(user.email);
+                currentUser = user;
+            } else {
+                return
+            }
+            if (currentUser == null) {
+                return;
+            }
+            else {
+                document.getElementById("overall").style.display = "block";
+                document.getElementById("overall2").style.display = "block";
+                document.getElementById("welcomepage").style.display = "none";
+                console.log("made it here");
+            }
+          });
+    }
+}
+}
+
+document.getElementById("overall").style.display = "none";
+document.getElementById("overall2").style.display = "none";
+
+document.getElementById("welcomePageId").addEventListener("click", function (e) {
+const email = document.getElementById("username").value;
+const password = document.getElementById("password").value;
+const the_ui = new UI();
+the_ui.signIn(email, password, e.target);
+the_ui.createAccount(email, password, e.target);
+e.preventDefault();
+//console.log(firebase.auth().currentUser);
+});
   

@@ -12,11 +12,21 @@
   </head>
 
   <body>
-    <div class="welcome page">
-        <h3> Welcome to the Task List Page</h3>
-      <div class="login page">
-          <P>Please sign in your email and password</P>
-        <div class="sign-in page">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <div id = "welcomepage" class="card product-card">
+          <h3>Welcome to your daily Task List</h3>
+          <hr />
+          <form id="welcomePageId">
+              <div class="form-group text-left">
+                  <input type="text" class="form-control" id="username" placeholder="Enter Username"/>
+              </div>
+              <div class="form-group text-left">
+                  <input type="password" class="form-control" id="password" placeholder="Enter Password"/>
+              </div>
+              <button type="submit" id = "createAccountButtonId" class="btn btn-primary create">Create Account</button>
+              <button type="submit" id = "signInButtonId" class="btn btn-primary sign">Sign In</button>
+          </form>
+      </div>     
           <div class="container">
             <div class="card">
               <div class="card-body">
